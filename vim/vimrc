@@ -1,0 +1,8 @@
+nmap <F6> :NERDTreeToggle<CR>
+set laststatus=2
+set noswapfile
+set mouse=v
+set clipboard=unnamedplus
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
