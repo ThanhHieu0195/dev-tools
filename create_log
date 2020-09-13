@@ -1,0 +1,13 @@
+# main_host=188.166.188.112
+# arr="128.199.176.247 128.199.112.69 128.199.214.212 188.166.188.112";
+# name_log="log_interact_server"
+# rm -rf $name_log
+# mkdir $name_log
+# i=0
+# for host in $arr
+# do
+#    echo $i'. downloading .... '$host
+#    scp -i ./ssh/id_rsa_gitlab root@$host:~/04-09-2020.log ./$name_log/$host.log
+#    i+=1
+# done
+# /root/logs_9_4_2020
