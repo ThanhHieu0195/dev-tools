@@ -1,3 +1,40 @@
 #!/bin/bash
-echo $1
-ssh -i ~/.ssh/id_rsa_gitlab root@$1
+host=$1
+sshfile=$(dirname "$0")/ssh/id_rsa_gitlab
+user=root
+
+if [ "$host" == "esp_api" ]; then
+    host=68.183.186.222
+    if [ "$2" == "2" ]; then
+        host=68.183.191.35
+    fi
+fi
+
+if [ "$host" == "tmp" ]; then
+    host=tmp-stg-espxcloud.espx.cloud
+fi
+
+if [ "$host" == "esp" ]; then
+    host=espx.cloud
+fi
+
+if [ "$host" == "ng_web" ]; then
+    host=ng-web-prod.espx.cloud
+fi
+
+if [ "$host" == "zuzu" ]; then
+    host=54.254.198.213
+    sshfile=wp-prod-ap-se-1.pem
+    user=bitnami
+fi
+
+if [ "$host" == "grab" ]; then
+    host=34.87.73.169
+    user=s4_huynhmy_wearesection_com
+    sshfile=$(dirname "$0")/ssh/id_rsa_grab
+fi
+
+echo "connect ... "$host
+echo "sshfile: "$sshfile
+
+ssh -v -i $sshfile $user@$host
