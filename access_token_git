@@ -5,3 +5,8 @@ GITLAB - esp_hieu
 GITHUB - thanhhieu0195
 	ThanhHieu0195@ad59218b6af6f3e53ac36287e6de63c6d49cc7cc
 	https://ThanhHieu0195@ad59218b6af6f3e53ac36287e6de63c6d49cc7cc@github.com/ThanhHieu0195/dev-tools.git
+
+export GITLAB_ACC=esp_hieu_gitlab:bE1DYspxjzSxaujxzhjn
+
+https://$GITLAB_ACC@gitlab.com/espxweb/esp-xcloud-vod.git
+https://$GITLAB_ACC@gitlab.com/espxng/esp-ng-web.git
