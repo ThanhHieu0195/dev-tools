@@ -37,3 +37,6 @@ sudo apt-get install -y mongodb-clients
 
 # sudo apt-get install --reinstall xserver-xorg-input-all
 #  sudo apt-get install xserver-xorg-core
+
+git config --local user.email 'hieu@techvsi.com'
+git config --local user.name 'Karrot'
