@@ -40,3 +40,6 @@ sudo apt-get install -y mongodb-clients
 
 git config --local user.email 'hieu@techvsi.com'
 git config --local user.name 'Karrot'
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
