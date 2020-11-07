@@ -1,0 +1,3 @@
+[submodule "plugins/plugins/wp-gdpr-consent"]
+	path = plugins/plugins/wp-gdpr-consent
+	url = https://github.com/firstandthird/wp-gdpr-consent.git

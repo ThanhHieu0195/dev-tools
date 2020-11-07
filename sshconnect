@@ -3,10 +3,22 @@ host=$1
 sshfile=$(dirname "$0")/ssh/id_rsa_gitlab
 user=root
 
+RED='\033[0;31m'
+NC='\033[0m'
+
+type=$2
+
 if [ "$host" == "esp_api" ]; then
     host=68.183.186.222
     if [ "$2" == "2" ]; then
         host=68.183.191.35
+    fi
+fi
+
+if [ "$host" == "mm2_api" ]; then
+    host=128.199.181.189
+    if [ "$2" == "2" ]; then
+        host=178.128.215.244
     fi
 fi
 
@@ -16,10 +28,6 @@ fi
 
 if [ "$host" == "esp" ]; then
     host=espx.cloud
-fi
-
-if [ "$host" == "ng_web" ]; then
-    host=ng-web-prod.espx.cloud
 fi
 
 if [ "$host" == "zuzu" ]; then
@@ -34,7 +42,34 @@ if [ "$host" == "grab" ]; then
     sshfile=$(dirname "$0")/ssh/id_rsa_grab
 fi
 
+if [ "$host" == "mm2" ]; then
+    host=206.189.45.54
+fi
+
+if [ "$host" == "ng_web" ]; then
+    host=206.189.46.145
+    if [ "$2" == "2" ]; then
+        host=206.189.84.162
+        echo -e "Connecting to .. ${RED}ng web 2-$host${NC}"
+    else
+        echo -e "Connecting to .. ${RED}ng web 1-$host${NC}"
+    fi
+fi
+
+if [ "$host" == "runner" ]; then
+    host=157.230.32.185
+fi
+
 echo "connect ... "$host
 echo "sshfile: "$sshfile
 
-ssh -v -i $sshfile $user@$host
+if [ "$type" == "scps" ];then
+    echo "$user@$host"
+    scp -v -i $sshfile $user@$host:$3 $4
+elif [ "$type" == "scp" ];then
+    echo "$user@$host"
+    scp -v -i $sshfile $3 $user@$host:$4
+else
+    echo "$user@$host"
+    ssh -v -i $sshfile $user@$host
+fi

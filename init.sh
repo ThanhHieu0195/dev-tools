@@ -5,7 +5,8 @@ sudo apt-get install curl
 ./install_nvm.sh
 
 echo 'Install projects'
-echo "export GITLAB_ACC=esp_hieu_gitlab:bE1DYspxjzSxaujxzhjn" >> ~/.bashrc
+GITLAB_ACC=esp_hieu_gitlab:bE1DYspxjzSxaujxzhjn
+
 cd /srv/
 git clone https://$GITLAB_ACC@gitlab.com/espxweb/esp-xcloud-vod.git
 git clone https://$GITLAB_ACC@gitlab.com/espxng/esp-ng-web.git
@@ -18,13 +19,13 @@ sudo chmod 600 /srv/dev-tools/ssh/*
 mkdir wpvip-projects
 cd wpvip-projects;
 
-git clone https://karrot:00e91e008b68ab3462ef3bd4d7cdd790d9e26b54@github.com/wpcomvip/fb-forwardtogether.git
+git clone https://hieu:72877c3f1f24d6f0aafe64927607af5573080e4a@github.com/wpcomvip/fb-forwardtogether.git
 cd fb-forwardtogether
 git config --local user.email 's4.huynh@wearesection.com'
 git config --local user.name 's4huynh'
 
 cd ..
-git clone https://karrot:00e91e008b68ab3462ef3bd4d7cdd790d9e26b54@github.com/wpcomvip/facebook-rethinkcrossborder.git
+git clone https://hieu:72877c3f1f24d6f0aafe64927607af5573080e4a@github.com/wpcomvip/facebook-rethinkcrossborder.git
 cd facebook-rethinkcrossborder
 git config --local user.email 's4.huynh@wearesection.com'
 git config --local user.name 's4huynh'
@@ -38,8 +39,8 @@ sudo apt-get install -y mongodb-clients
 # sudo apt-get install --reinstall xserver-xorg-input-all
 #  sudo apt-get install xserver-xorg-core
 
-git config --local user.email 'hieu@techvsi.com'
-git config --local user.name 'Karrot'
+#git config --local user.email 'hieu@techvsi.com'
+#git config --local user.name 'Karrot'
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
