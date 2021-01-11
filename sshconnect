@@ -1,6 +1,7 @@
 #!/bin/bash
 host=$1
-sshfile=$(dirname "$0")/ssh/id_rsa_gitlab
+rootdir=/srv/dev-tools
+sshfile=$rootdir/ssh/id_rsa_gitlab
 user=root
 
 RED='\033[0;31m'
@@ -56,8 +57,19 @@ if [ "$host" == "ng_web" ]; then
     fi
 fi
 
+if [ "$host" == "ng_api" ]; then
+    host=ng-api.espx.cloud
+    sshfile=$rootdir/ssh/espxkarrot.pem
+    user=ec2-user
+    echo -e "Connecting to .. ${RED}$host${NC}"
+fi
+
 if [ "$host" == "runner" ]; then
     host=157.230.32.185
+fi
+
+if [ "$host" == "techvsi" ]; then
+    host=sftp.techvsi.com
 fi
 
 echo "connect ... "$host

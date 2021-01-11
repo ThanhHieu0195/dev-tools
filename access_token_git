@@ -10,3 +10,9 @@ export GITLAB_ACC=esp_hieu_gitlab:bE1DYspxjzSxaujxzhjn
 
 https://$GITLAB_ACC@gitlab.com/espxweb/esp-xcloud-vod.git
 https://$GITLAB_ACC@gitlab.com/espxng/esp-ng-web.git
+
+devdev:b40ba39e9d83ca88e1de0bcb628d7400a2e30134
+https://devdev:b40ba39e9d83ca88e1de0bcb628d7400a2e30134@github.com/wpcomvip/fb-wethinkdigital.git
+
+https://esp_hieu_gitlab:bE1DYspxjzSxaujxzhjn@gitlab.com/espxlogs/esp-logs-raw.git
+https://esp_hieu_gitlab:bE1DYspxjzSxaujxzhjn@gitlab.com:esp_hieu/esp-ip2location.git
