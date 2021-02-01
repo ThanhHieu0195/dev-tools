@@ -72,6 +72,11 @@ if [ "$host" == "techvsi" ]; then
     host=sftp.techvsi.com
 fi
 
+if [ "$host" == "esp_action" ]
+then
+	host=209.97.163.92
+fi
+
 echo "connect ... "$host
 echo "sshfile: "$sshfile
 
