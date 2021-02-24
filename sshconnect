@@ -77,6 +77,14 @@ then
 	host=209.97.163.92
 fi
 
+
+if [ "$host" == "awslog" ];
+then
+    host=54.255.151.207
+    sshfile=$rootdir/ssh/aws-espxkarrot.pem
+    user=ec2-user
+fi
+
 echo "connect ... "$host
 echo "sshfile: "$sshfile
 
